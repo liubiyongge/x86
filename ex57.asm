@@ -15,7 +15,7 @@ start:
 
 ;set Ds register to current data segment
 	mov ax,datarea
-	mov dx,ax
+	mov ds,ax
 ;main part of program goes here
 	mov cx,5
 	dec cx
