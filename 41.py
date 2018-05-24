@@ -30,6 +30,7 @@ class TurtleControl(QWidget):
 		self.controlsLayout.addWidget(self.green_label, 3, 0)
 		self.controlsLayout.addWidget(self.blue_label, 4, 0)
 		self.controlsLayout.addWidget(self.color_btn, 5, 0)
+		
 		self.setLayout(self.controlsLayout)
 
 		self.distance_spin.setRange(0, 100)
