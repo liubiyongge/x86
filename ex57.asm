@@ -1,8 +1,8 @@
-datarea segemnt
+datarea segment
 	a dw 8, 5, 16, 84, 32
 datarea ends
 ;************************88
-code segemnt
+code segment
 ;**************************88
 main proc far
 	assume cs:code,ds:datarea
