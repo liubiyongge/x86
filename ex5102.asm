@@ -25,14 +25,16 @@ start:
 	mov al,  1
 	cmp al, 0
 	je coutinue_main_line
-	mov si,0
+	lea bx, datatable
+	mov si, 7 * type datatable
+	mov cx, 8
 l:
 	shr al, 1
 	jnb not_yet
-	jmp datatable[si]
+	jmp word ptr[bx][si]
 not_yet:
-	add  si, type datatable
-	jmp l
+	sub  si, type datatable
+	loop l
 coutinue_main_line:
 	mov result, 1110h
 	jmp exit
@@ -46,6 +48,8 @@ routine_5:
 routine_6:
 routine_7:
 routine_8:
+	mov result, 1118h
+	jmp exit
 exit:
 	ret
 main endp

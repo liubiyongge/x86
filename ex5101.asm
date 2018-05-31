@@ -25,14 +25,14 @@ start:
 	mov al,  1
 	cmp al, 0
 	je coutinue_main_line
-	mov si,0
+	lea bx, datatable
 l:
 	shr al, 1
 	jnb not_yet
-	jmp datatable[si]
+	jmp word ptr[bx]
 not_yet:
-	add  si, type datatable
-	jmp l
+	add  bx, type datatable
+	jmp 1
 coutinue_main_line:
 	mov result, 1110h
 	jmp exit
