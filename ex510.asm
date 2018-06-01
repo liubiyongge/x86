@@ -14,10 +14,6 @@ code segment
 main proc far
 	assume cs:code, ds:data
 start:
-	push ds
-	sub ax,ax
-	push ax
-
 	mov  ax, data
 	mov ds, ax
 ;mian proc start here
@@ -47,6 +43,8 @@ routine_6:
 routine_7:
 routine_8:
 exit:
+	mov ah, 4ch
+	int 21h
 	ret
 main endp
 code ends
